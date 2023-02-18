@@ -1,0 +1,66 @@
+Sandulache Mihnea-Stefan
+Tema 2 PCLP1 2022
+
+Problema 1 - Text Highlight
+Timp de implementare - 2 ore
+-------------------------------------------------------------------------------
+    Am implementat doua functii: una pentru a introduce textul citit, in
+matricea initializata cu spatii, doar pe liniile pare, urmmand ca pe cele
+impare sa se realizeze eventualele sublinieri si o functie care subliniaza
+cuvantul sau cuvintele cheie.
+    Functia "subliniere" considera fiecare linie para a matricei si extrage,
+cuvant cu cuvant, verificand daca acesta trebuie sau nu subliniat.In caz
+afirmativ, se verifica daca cuvantul actual formeaza o structura cheie cu
+urmatorul cuvant, acestea fiind subliniate pe linia impara 
+si trecandu-se mai departe.In caz contrar, se subliniaza doar cuvantul initial,
+fara a se trece mai departe.De asemenea, se vor considera cazuri speciale
+pentru structurile "list of" si "first of", acestea nefiind introduse in
+dictionar, deoarece primul cuvant nu poate fi subliniat independent de al
+doilea.
+
+Problema 2 - Autocomplete
+Timp de implementare - 6 ore
+-------------------------------------------------------------------------------
+    Am implementat trei functii: una pentru a adauga un nou cuvant in dictionar
+, una pentru a verifica daca un cuvant se afla in dictionar si una pentru a
+transforma cuvintele citite.
+    Functia "adaugare" adauga pe pozitia "n" noul cuvant si prioritatea sa
+egala cu 1, realocarea vectorului realizandu-se in functia "transformare"
+dupa apelarea functiei "adaugare".
+    Functia "is_in_d" verifica daca cuvantul citit se afla in dictionar, caz in
+care se va returna pozitia acestuia sau -1 in caz contrar.
+    Functia "transformare" prelucreaza fiecare cuvant citit, considerand trei
+cazuri: cel in care cuvantul are caracterul "*" la final, caz in care se va
+elimina ultimul caracter si se va verifica daca cuvantul se afla in dictionar,
+fiindu-i crescuta prioritatea sau nu, fiind adaugat in dictionar; cel in care
+cuvantul se potriveste cu cel putin un cuvant din dictionar, caz in care este
+ales cel cu prioritatea cea mai mare si cel mai mic din punct de vedere
+lexicografic si cazul in care cuvantul nu este gasit in dictionar, caz in care
+este adaugat.
+    In functia "main" se aloca fiecare cuvant din dictionar cu memoria necesara
+si se citeste cuvant cu cuvant din textul pentru trasnformare.
+
+Problema 3 - Calculator pe biti
+Timp de implementare - 8 ore
+-------------------------------------------------------------------------------
+    Am implementat 4 functii pentru fiecare operatie ceruta.
+    Functia "rotatie" elimina cel mai semnficativ bit, printr-o shiftare la
+stanga cu 1 si il introduce in locul celui mai nesemnificativ, fiind
+considerati doar primii 4 biti.
+    Functia "interschimbare" extrage bitii care trebuie interschimbati si
+verifica daca acestia sunt diferiti, caz in care se realizeaza interschimbarea
+sau nu efectueaza nicio schimbare in cazul in care acestia au aceeasi valoare.
+    Functia "adunare" extrage fiecare bit din numere si verifica, in functie de
+valoarea variabilei "imp" si de valorile bitilor, rezultatul adunarii,
+considerandu-se 3 cazuri: cazul in care ambii biti sunt 1, valoarea
+rezultatului fiind data de "imp", aceasta luand valoarea 1, cazul in care ambii
+biti sunt 0, valoarea rezultatului fiind data de "imp", aceasta luand
+valoarea 0 sau cazul in care bitii sunt diferiti, rezultatul fiind 0 daca "imp"
+este 1, respectiv 1 daca "imp" este 0, valoarea acesteia ramanand neschimbata.
+    Functia "xor" extrage fiecare bit din numere si considera 2 cazuri: cel in
+care bitii au aceeasi valoarea, caz in care se va introduce 0 pe pozitia
+curenta si cazul in care acestia sunt diferiti, caz in care se va introduce 1
+pe pozitia curenta.
+    In functia "main", extrage primul rand de 4 biti, precum si operatia si
+urmatorul numar, care se vor actualiza repetat, rezultatul fiind suprascris 
+peste primul numar.
